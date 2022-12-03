@@ -2,7 +2,7 @@
 
 ## インフラ構成
 
-infra.drawio をご覧ください。
+![](./infra.drawio.svg)
 
 ## 概要
 
