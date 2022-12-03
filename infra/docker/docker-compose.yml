@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  frontend:
+    build:
+      context: ../../
+      dockerfile: ./infra/docker/frontend/Dockerfile
+    volumes:
+      - ../../frontend/:/usr/src/app/
+    ports:
+      - "3000:3000"
+    command: sh -c "npm run dev"
