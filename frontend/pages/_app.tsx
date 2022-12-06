@@ -1,11 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-
-const client = new ApolloClient({
-  uri: 'https://flyby-gateway.herokuapp.com/',
-  cache: new InMemoryCache(),
-});
+import { ApolloProvider, client } from '../lib/apollo/apollo';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
