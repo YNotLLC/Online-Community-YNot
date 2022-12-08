@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { client } from "../../lib/apollo/apollo";
 import { GET_POSTS } from "../../lib/apollo/query";
 import { RootState } from "../../lib/redux/store";
 import { Post, PostState } from "./postType";
@@ -14,8 +15,31 @@ export const getPosts = createAsyncThunk(
     const res = await client.query({
       query: GET_POSTS,
     });
-    const data: Post[] = res.data.posts.nodes;
-    return data;
+    interface Res {
+      categories: {
+        nodes: [
+          {
+            __typename: string;
+            name: string;
+          }
+        ];
+      };
+      content: string;
+      date: string;
+      title: string;
+      __typename: string;
+    }
+    const data: Res[] = res.data.posts.nodes;
+    const modifiedData: Post[] = [];
+    data.map((post) => {
+      modifiedData.push({
+        categories: post.categories.nodes[0].name,
+        content: post.content,
+        title: post.title,
+        uploadedAt: post.date,
+      });
+    });
+    return modifiedData;
   }
 );
 
