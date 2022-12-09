@@ -1,5 +1,7 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import Header from "../../components/Header";
 import { selectPost } from "../../feature/post/postSlice";
 import { useAppSelector } from "../../lib/redux/hooks";
 
@@ -12,14 +14,25 @@ const MemberOnlyContentDetail = () => {
   })[0];
   return (
     <Box>
-      <Heading
-        as="h1"
-        dangerouslySetInnerHTML={{ __html: post && post.title }}
-      ></Heading>
-      <Text dangerouslySetInnerHTML={{ __html: post && post.content }}></Text>
-      <Text
-        dangerouslySetInnerHTML={{ __html: post && post.uploadedAt }}
-      ></Text>
+      <Header />
+      <Stack p={4} spacing={8}>
+        <Box>
+          <Heading
+            as="h1"
+            color="teal.400"
+            dangerouslySetInnerHTML={{ __html: post && post.title }}
+          ></Heading>
+          <Text
+            dangerouslySetInnerHTML={{ __html: post && post.uploadedAt }}
+          ></Text>
+        </Box>
+        <Box bg="gray.50" minH="50vh" p={2}>
+          <Text
+            dangerouslySetInnerHTML={{ __html: post && post.content }}
+          ></Text>
+        </Box>
+        <Link href="/">トップページへ</Link>
+      </Stack>
     </Box>
   );
 };

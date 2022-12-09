@@ -5,37 +5,23 @@ import Article from "../components/Article";
 import Header from "../components/Header";
 import { getPosts, selectPost } from "../feature/post/postSlice";
 import { Post } from "../feature/post/postType";
+import useCategoryFilter from "../hooks/useCategoryFilter";
 import { useAppDispatch, useAppSelector } from "../lib/redux/hooks";
 
 export default function Home() {
   const dispatch = useAppDispatch();
   const posts = useAppSelector(selectPost);
-  const [news, setNews] = useState<Post[]>([]);
-  const [memberOnlyContent, setMemberOnlyContent] = useState<Post[]>([]);
+  const { news, memberOnlyContent } = useCategoryFilter(posts);
   useEffect(() => {
     (async () => {
       await dispatch(getPosts());
     })();
   }, []);
-
-  useEffect(() => {
-    if (posts.data) {
-      let newsData = posts.data.filter((post) => {
-        return post.category == "news";
-      });
-      setNews(newsData);
-
-      let memberOnlyContentData = posts.data.filter((post) => {
-        return post.category == "member-only-contents";
-      });
-      setMemberOnlyContent(memberOnlyContentData);
-    }
-  }, [posts]);
   return (
     <Box>
       <Header />
       <Stack p={4} spacing={4}>
-        <Heading as="h2" fontSize="3xl" color="teal.400">
+        <Heading as="h1" fontSize="3xl" color="teal.400">
           トップページ
         </Heading>
         <Stack spacing={4}>
