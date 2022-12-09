@@ -56,9 +56,9 @@ export default function Home() {
             );
           })}
           <Flex justify="center">
-            <Button>
-              <Link href="/news">もっとみる</Link>
-            </Button>
+            <Link href="/news">
+              <Button>もっとみる</Button>
+            </Link>
           </Flex>
         </Stack>
         <Stack spacing={4}>
@@ -79,9 +79,9 @@ export default function Home() {
             );
           })}
           <Flex justify="center">
-            <Button>
-              <Link href="/member-only-content">もっとみる</Link>
-            </Button>
+            <Link href="/member-only-contents">
+              <Button>もっとみる</Button>
+            </Link>
           </Flex>
         </Stack>
       </Stack>
