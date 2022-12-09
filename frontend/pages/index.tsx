@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Heading, Stack } from "@chakra-ui/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Article from "../components/Article";
@@ -28,19 +28,23 @@ export default function Home() {
           <Heading as="h3" fontSize="xl">
             ニュース
           </Heading>
-          {news.map((post, index) => {
-            if (index > 2) return;
-            return (
-              <Article
-                key={post.id}
-                id={post.id}
-                category={post.category}
-                title={post.title}
-                content={post.content}
-                uploadedAt={post.uploadedAt}
-              />
-            );
-          })}
+          <Grid
+            templateColumns={{ base: "1fr", sm: "1fr 1fr", md: "1fr 1fr 1fr" }}
+          >
+            {news.map((post, index) => {
+              if (index > 2) return;
+              return (
+                <Article
+                  key={post.id}
+                  id={post.id}
+                  category={post.category}
+                  title={post.title}
+                  content={post.content}
+                  uploadedAt={post.uploadedAt}
+                />
+              );
+            })}
+          </Grid>
           <Flex justify="center">
             <Link href="/news">
               <Button>もっとみる</Button>
@@ -51,19 +55,28 @@ export default function Home() {
           <Heading as="h3" fontSize="xl">
             コミュニティ限定コンテンツ
           </Heading>
-          {memberOnlyContent.map((post, index) => {
-            if (index > 2) return;
-            return (
-              <Article
-                key={post.id}
-                id={post.id}
-                category={post.category}
-                title={post.title}
-                content={post.content}
-                uploadedAt={post.uploadedAt}
-              />
-            );
-          })}
+          <Grid
+            templateColumns={{
+              base: "1fr",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(3, 1fr)",
+            }}
+            gap={4}
+          >
+            {memberOnlyContent.map((post, index) => {
+              if (index > 2) return;
+              return (
+                <Article
+                  key={post.id}
+                  id={post.id}
+                  category={post.category}
+                  title={post.title}
+                  content={post.content}
+                  uploadedAt={post.uploadedAt}
+                />
+              );
+            })}
+          </Grid>
           <Flex justify="center">
             <Link href="/member-only-contents">
               <Button>もっとみる</Button>

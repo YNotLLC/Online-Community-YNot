@@ -1,4 +1,4 @@
-import { Box, Heading, Stack } from "@chakra-ui/react";
+import { Box, Grid, Heading, Stack } from "@chakra-ui/react";
 import Link from "next/link";
 import Article from "../../components/Article";
 import Header from "../../components/Header";
@@ -16,19 +16,29 @@ const News = () => {
         <Heading as="h1" color="teal.400">
           ニュース
         </Heading>
-        {news.map((post, index) => {
-          if (index > 4) return;
-          return (
-            <Article
-              key={post.id}
-              id={post.id}
-              category={post.category}
-              title={post.title}
-              content={post.content}
-              uploadedAt={post.uploadedAt}
-            />
-          );
-        })}
+        <Grid
+          templateColumns={{
+            base: "1fr",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(3, 1fr)",
+          }}
+          gap={4}
+        >
+          {news.map((post, index) => {
+            if (index > 4) return;
+            return (
+              <Article
+                key={post.id}
+                id={post.id}
+                category={post.category}
+                title={post.title}
+                content={post.content}
+                uploadedAt={post.uploadedAt}
+              />
+            );
+          })}
+        </Grid>
+
         <Link href="/">トップページへ</Link>
       </Stack>
     </Box>

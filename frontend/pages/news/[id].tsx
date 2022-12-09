@@ -1,4 +1,4 @@
-import { Box, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Center, Heading, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Header from "../../components/Header";
@@ -15,7 +15,7 @@ const NewsDetail = () => {
   return (
     <Box>
       <Header />
-      <Stack p={4} spacing={8}>
+      <Stack p={4} spacing={8} maxW={800} mx="auto">
         <Box>
           <Heading
             as="h1"

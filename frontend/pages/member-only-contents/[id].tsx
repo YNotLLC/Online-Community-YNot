@@ -15,7 +15,7 @@ const MemberOnlyContentDetail = () => {
   return (
     <Box>
       <Header />
-      <Stack p={4} spacing={8}>
+      <Stack p={4} spacing={8} maxW={800} mx="auto">
         <Box>
           <Heading
             as="h1"
