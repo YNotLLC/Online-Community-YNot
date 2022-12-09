@@ -12,10 +12,12 @@ const MemberOnlyContentDetail = () => {
     <Box>
       <Heading
         as="h1"
-        dangerouslySetInnerHTML={{ __html: post.title }}
+        dangerouslySetInnerHTML={{ __html: post && post.title }}
       ></Heading>
-      <Text dangerouslySetInnerHTML={{ __html: post.content }}></Text>
-      <Text dangerouslySetInnerHTML={{ __html: post.uploadedAt }}></Text>
+      <Text dangerouslySetInnerHTML={{ __html: post && post.content }}></Text>
+      <Text
+        dangerouslySetInnerHTML={{ __html: post && post.uploadedAt }}
+      ></Text>
     </Box>
   );
 };
