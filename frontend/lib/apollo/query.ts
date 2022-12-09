@@ -4,6 +4,7 @@ export const GET_POSTS = gql`
   query GetPosts {
     posts {
       nodes {
+        postId
         title
         content
         date

@@ -7,7 +7,9 @@ const MemberOnlyContentDetail = () => {
   const router = useRouter();
   const id: number = Number(router.query.id);
   const posts = useAppSelector(selectPost);
-  const post = posts.data[id];
+  const post = posts.data.filter((postData) => {
+    return postData.id == id;
+  })[0];
   return (
     <Box>
       <Heading

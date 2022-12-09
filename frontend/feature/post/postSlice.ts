@@ -24,6 +24,7 @@ export const getPosts = createAsyncThunk(
           }
         ];
       };
+      postId: number;
       content: string;
       date: string;
       title: string;
@@ -31,9 +32,9 @@ export const getPosts = createAsyncThunk(
     }
     const data: Res[] = res.data.posts.nodes;
     const modifiedData: Post[] = [];
-    data.map((post, index) => {
+    data.map((post) => {
       modifiedData.push({
-        id: index,
+        id: post.postId,
         category: post.categories.nodes[0].name,
         content: post.content,
         title: post.title,
