@@ -31,12 +31,13 @@ export const getPosts = createAsyncThunk(
     }
     const data: Res[] = res.data.posts.nodes;
     const modifiedData: Post[] = [];
-    data.map((post) => {
+    data.map((post, index) => {
       modifiedData.push({
-        categories: post.categories.nodes[0].name,
+        id: index,
+        category: post.categories.nodes[0].name,
         content: post.content,
         title: post.title,
-        uploadedAt: post.date,
+        uploadedAt: post.date.replace("T", " "),
       });
     });
     return modifiedData;

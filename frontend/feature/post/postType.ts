@@ -1,7 +1,8 @@
 import { Status } from "../../lib/redux/type";
 
 export interface Post {
-  categories: string;
+  id: number;
+  category: string;
   title: string;
   content: string;
   uploadedAt: string;
