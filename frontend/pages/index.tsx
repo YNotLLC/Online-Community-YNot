@@ -47,7 +47,9 @@ export default function Home() {
           </Grid>
           <Flex justify="center">
             <Link href="/news">
-              <Button>もっとみる</Button>
+              <Button size="sm" colorScheme="red">
+                もっとみる
+              </Button>
             </Link>
           </Flex>
         </Stack>
@@ -79,7 +81,9 @@ export default function Home() {
           </Grid>
           <Flex justify="center">
             <Link href="/member-only-contents">
-              <Button>もっとみる</Button>
+              <Button size="sm" colorScheme="red">
+                もっとみる
+              </Button>
             </Link>
           </Flex>
         </Stack>

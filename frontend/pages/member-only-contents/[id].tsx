@@ -27,7 +27,7 @@ const MemberOnlyContentDetail = () => {
             color="blackAlpha.900"
           ></Text>
         </Box>
-        <Box bg="gray.50" minH="50vh" p={2}>
+        <Box minH="50vh" p={2}>
           <Text
             dangerouslySetInnerHTML={{ __html: post && post.content }}
             color="blackAlpha.900"

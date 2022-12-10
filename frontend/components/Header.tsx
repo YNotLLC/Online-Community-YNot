@@ -1,4 +1,5 @@
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Button, Flex, Heading, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -10,12 +11,14 @@ const Header = () => {
       top="0"
       left="0"
     >
-      <Heading as="h2" color="blackAlpha.900" size="xl">
-        YNot
-      </Heading>
-      <Text color="blackAlpha.900" fontWeight="bold">
+      <Link href="/">
+        <Heading as="h2" color="blackAlpha.900" size="xl">
+          YNot
+        </Heading>
+      </Link>
+      <Button colorScheme="red" size="sm">
         テスト太郎さん
-      </Text>
+      </Button>
     </Flex>
   );
 };
