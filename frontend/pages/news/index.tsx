@@ -1,4 +1,4 @@
-import { Box, Grid, Heading, Stack } from "@chakra-ui/react";
+import { Box, Grid, Heading, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import Article from "../../components/Article";
 import Header from "../../components/Header";
@@ -13,7 +13,7 @@ const News = () => {
     <Box>
       <Header />
       <Stack p={4} spacing={8}>
-        <Heading as="h1" color="teal.400">
+        <Heading as="h1" color="blackAlpha.900">
           ニュース
         </Heading>
         <Grid
@@ -39,7 +39,9 @@ const News = () => {
           })}
         </Grid>
 
-        <Link href="/">トップページへ</Link>
+        <Link href="/">
+          <Text color="blackAlpha.900">トップページへ</Text>
+        </Link>
       </Stack>
     </Box>
   );

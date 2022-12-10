@@ -2,11 +2,18 @@ import { Flex, Heading, Text } from "@chakra-ui/react";
 
 const Header = () => {
   return (
-    <Flex bg="teal.400" justify="space-between" alignItems="center" p={4}>
-      <Heading as="h2" color="gray.50" size="xl">
+    <Flex
+      justify="space-between"
+      alignItems="center"
+      p={4}
+      position="sticky"
+      top="0"
+      left="0"
+    >
+      <Heading as="h2" color="blackAlpha.900" size="xl">
         YNot
       </Heading>
-      <Text color="gray.50" fontWeight="bold">
+      <Text color="blackAlpha.900" fontWeight="bold">
         テスト太郎さん
       </Text>
     </Flex>

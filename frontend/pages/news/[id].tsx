@@ -19,19 +19,23 @@ const NewsDetail = () => {
         <Box>
           <Heading
             as="h1"
-            color="teal.400"
+            color="blackAlpha.900"
             dangerouslySetInnerHTML={{ __html: post && post.title }}
           ></Heading>
           <Text
             dangerouslySetInnerHTML={{ __html: post && post.uploadedAt }}
+            color="blackAlpha.900"
           ></Text>
         </Box>
         <Box bg="gray.50" minH="50vh" p={2}>
           <Text
             dangerouslySetInnerHTML={{ __html: post && post.content }}
+            color="blackAlpha.900"
           ></Text>
         </Box>
-        <Link href="/">トップページへ</Link>
+        <Link href="/">
+          <Text color="blackAlpha.900">トップページへ</Text>
+        </Link>
       </Stack>
     </Box>
   );

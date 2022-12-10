@@ -13,7 +13,7 @@ const Article = (props: Props) => {
   return (
     <Link href={`/${props.category}/${props.id}`}>
       <Stack
-        bg="gray.100"
+        bg="blackAlpha.100"
         p={2}
         borderRadius={10}
         h={140}
@@ -22,6 +22,7 @@ const Article = (props: Props) => {
         <Text
           fontWeight="bold"
           dangerouslySetInnerHTML={{ __html: props.title }}
+          color="blackAlpha.900"
         ></Text>
         <Box
           overflow="hidden"
@@ -34,11 +35,13 @@ const Article = (props: Props) => {
           <Text
             fontSize="sm"
             dangerouslySetInnerHTML={{ __html: props.content }}
+            color="blackAlpha.900"
           ></Text>
         </Box>
         <Text
           fontSize="sm"
           dangerouslySetInnerHTML={{ __html: props.uploadedAt }}
+          color="blackAlpha.900"
         ></Text>
       </Stack>
     </Link>

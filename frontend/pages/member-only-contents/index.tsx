@@ -13,7 +13,7 @@ const MemberOnlyContent = () => {
     <Box>
       <Header />
       <Stack p={4} spacing={8}>
-        <Heading as="h1" color="teal.400">
+        <Heading as="h1" color="blackAlpha.900">
           コミュニティ限定コンテンツ
         </Heading>
         <Grid

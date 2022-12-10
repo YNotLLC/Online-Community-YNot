@@ -21,7 +21,7 @@ export default function Home() {
     <Box>
       <Header />
       <Stack p={4} spacing={4}>
-        <Heading as="h1" fontSize="3xl" color="teal.400">
+        <Heading as="h1" fontSize="3xl" color="blackAlpha.900">
           トップページ
         </Heading>
         <Stack spacing={4}>
