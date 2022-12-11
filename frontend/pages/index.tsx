@@ -28,6 +28,7 @@ export default function Home() {
           </Heading>
           <Grid
             templateColumns={{ base: "1fr", sm: "1fr 1fr", md: "1fr 1fr 1fr" }}
+            gap={4}
           >
             {news.map((post, index) => {
               if (index > 2) return;
