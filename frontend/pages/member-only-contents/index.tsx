@@ -1,14 +1,20 @@
 import { Box, Grid, Heading, Stack } from "@chakra-ui/react";
 import Link from "next/link";
+import { useEffect } from "react";
 import Article from "../../components/Article";
 import Header from "../../components/Header";
-import { selectPost } from "../../feature/post/postSlice";
+import { getPosts, selectPost } from "../../feature/post/postSlice";
 import useCategoryFilter from "../../hooks/useCategoryFilter";
-import { useAppSelector } from "../../lib/redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../lib/redux/hooks";
 
 const MemberOnlyContent = () => {
+  const dispatch = useAppDispatch();
   const posts = useAppSelector(selectPost);
   const { memberOnlyContent } = useCategoryFilter(posts);
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, []);
   return (
     <Box>
       <Header />

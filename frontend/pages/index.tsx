@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Article from "../components/Article";
 import Header from "../components/Header";
 import { getPosts, selectPost } from "../feature/post/postSlice";
-import { Post } from "../feature/post/postType";
 import useCategoryFilter from "../hooks/useCategoryFilter";
 import { useAppDispatch, useAppSelector } from "../lib/redux/hooks";
 
@@ -12,10 +11,9 @@ export default function Home() {
   const dispatch = useAppDispatch();
   const posts = useAppSelector(selectPost);
   const { news, memberOnlyContent } = useCategoryFilter(posts);
+
   useEffect(() => {
-    (async () => {
-      await dispatch(getPosts());
-    })();
+    dispatch(getPosts());
   }, []);
   return (
     <Box>
