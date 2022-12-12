@@ -22,7 +22,9 @@ const Header = () => {
           テスト太郎さん
         </MenuButton>
         <MenuList>
-          <MenuItem>ログアウト</MenuItem>
+          <Link href="/">
+            <MenuItem>ログアウト</MenuItem>
+          </Link>
         </MenuList>
       </Menu>
     </Flex>
