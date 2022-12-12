@@ -19,9 +19,7 @@ const News = () => {
     <Box>
       <Header />
       <Stack p={4} spacing={8}>
-        <Heading as="h1" color="blackAlpha.900">
-          ニュース
-        </Heading>
+        <Heading as="h1">ニュース</Heading>
         <Grid
           templateColumns={{
             base: "1fr",
@@ -46,7 +44,7 @@ const News = () => {
         </Grid>
 
         <Link href="/">
-          <Text color="blackAlpha.900">トップページへ</Text>
+          <Text>トップページへ</Text>
         </Link>
       </Stack>
     </Box>

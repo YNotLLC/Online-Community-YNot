@@ -13,7 +13,7 @@ const Article = (props: Props) => {
   return (
     <Link href={`/${props.category}/${props.id}`}>
       <Stack
-        bg="blackAlpha.100"
+        bg="blackAlpha.50"
         p={2}
         borderRadius={10}
         h={140}
@@ -41,7 +41,6 @@ const Article = (props: Props) => {
         <Text
           fontSize="sm"
           dangerouslySetInnerHTML={{ __html: props.uploadedAt }}
-          color="blackAlpha.900"
         ></Text>
       </Stack>
     </Link>

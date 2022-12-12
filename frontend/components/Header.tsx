@@ -12,13 +12,11 @@ const Header = () => {
       left="0"
     >
       <Link href="/">
-        <Heading as="h2" color="blackAlpha.900" size="xl">
+        <Heading as="h2" size="xl">
           YNot
         </Heading>
       </Link>
-      <Button colorScheme="red" size="sm">
-        テスト太郎さん
-      </Button>
+      <Button size="sm">テスト太郎さん</Button>
     </Flex>
   );
 };
