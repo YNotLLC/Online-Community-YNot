@@ -1,5 +1,4 @@
-import { Button, Flex, Heading, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { Button, Flex, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 const Header = () => {
@@ -17,14 +16,9 @@ const Header = () => {
           YNot
         </Heading>
       </Link>
-      <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} colorScheme="red" size="sm">
-          テスト太郎さん
-        </MenuButton>
-        <MenuList>
-          <MenuItem>ログアウト</MenuItem>
-        </MenuList>
-      </Menu>
+      <Button colorScheme="red" size="sm">
+        テスト太郎さん
+      </Button>
     </Flex>
   );
 };
