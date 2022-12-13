@@ -1,8 +1,12 @@
 import { Button, Flex, Heading, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { getAuth, signInWithRedirect, GoogleAuthProvider } from "firebase/auth";
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import Link from "next/link";
+import FirebaseApp from "../lib/firebase/firebase";
 
 const Header = () => {
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth(FirebaseApp);
   return (
     <Flex
       justify="space-between"
@@ -17,16 +21,11 @@ const Header = () => {
           YNot
         </Heading>
       </Link>
-      <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} colorScheme="red" size="sm">
-          テスト太郎さん
-        </MenuButton>
-        <MenuList>
-          <Link href="/">
-            <MenuItem>ログアウト</MenuItem>
-          </Link>
-        </MenuList>
-      </Menu>
+      <Button colorScheme="red" size="sm"
+        onClick={() => {
+          signInWithRedirect(auth, provider);
+        }}
+      >ログイン</Button>
     </Flex>
   );
 };
