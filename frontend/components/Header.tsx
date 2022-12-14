@@ -1,12 +1,9 @@
 import { Button, Flex, Heading, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-import { getAuth, signInWithRedirect, GoogleAuthProvider } from "firebase/auth";
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { signInWithRedirect } from "firebase/auth";
+import { auth, provider } from "../lib/firebase/firebase";
 import Link from "next/link";
-import FirebaseApp from "../lib/firebase/firebase";
 
 const Header = () => {
-  const provider = new GoogleAuthProvider();
-  const auth = getAuth(FirebaseApp);
   return (
     <Flex
       justify="space-between"
