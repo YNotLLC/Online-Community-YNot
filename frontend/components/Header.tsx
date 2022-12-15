@@ -1,6 +1,7 @@
 import { Button, Flex, Heading, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { signInWithRedirect } from "firebase/auth";
-import { auth, provider } from "../lib/firebase/firebase";
+import { auth, provider, db } from "../lib/firebase/firebase";
+import { collection, addDoc } from "firebase/firestore";
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import Link from "next/link";
 
@@ -20,9 +21,17 @@ const Header = () => {
         </Heading>
       </Link>
       <Button colorScheme="red" size="sm"
-        onClick={() => {
-          signInWithRedirect(auth, provider);
-        }}
+        onClick={
+          async () => {
+            signInWithRedirect(auth, provider);
+            const user = auth.currentUser
+            const displayName = user?.displayName
+            const email = user?.email
+            await addDoc(collection(db, "users"), {
+              name: displayName,
+              email: email
+            });
+          }}
       >ログイン</Button>
     </Flex>
   );
