@@ -21,13 +21,12 @@ const Header = () => {
         </Heading>
       </Link>
       <Button colorScheme="red" size="sm"
-        onClick={
-          async () => {
+        onClick={async () => {
             signInWithRedirect(auth, provider);
             const user = auth.currentUser
             const displayName = user?.displayName
             const email = user?.email
-            await addDoc(collection(db, "users"), {
+            addDoc(collection(db, "users"), {
               name: displayName,
               email: email
             });
