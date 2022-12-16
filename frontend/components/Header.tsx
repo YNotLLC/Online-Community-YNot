@@ -3,6 +3,7 @@ import { signInWithRedirect } from "firebase/auth";
 import { auth, provider, db } from "../lib/firebase/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { ChevronDownIcon } from '@chakra-ui/icons';
+import TopBtn from "./TopBtn";
 import Link from "next/link";
 
 const Header = () => {
@@ -20,18 +21,7 @@ const Header = () => {
           YNot
         </Heading>
       </Link>
-      <Button colorScheme="red" size="sm"
-        onClick={async () => {
-            signInWithRedirect(auth, provider);
-            const user = auth.currentUser
-            const displayName = user?.displayName
-            const email = user?.email
-            addDoc(collection(db, "users"), {
-              name: displayName,
-              email: email
-            });
-          }}
-      >ログイン</Button>
+      <TopBtn />
     </Flex>
   );
 };
