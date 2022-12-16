@@ -4,7 +4,17 @@ const theme = extendTheme({
   components: {
     Text: {
       baseStyle: {
-        color: "gray.400",
+        color: "blackAlpha.600",
+      },
+    },
+    Heading: {
+      baseStyle: {
+        color: "blackAlpha.900",
+      },
+    },
+    Button: {
+      defaultProps: {
+        colorScheme: "red",
       },
     },
   },

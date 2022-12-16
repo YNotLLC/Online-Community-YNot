@@ -25,12 +25,10 @@ const NewsDetail = () => {
         <Box>
           <Heading
             as="h1"
-            color="blackAlpha.900"
             dangerouslySetInnerHTML={{ __html: post && post.title }}
           ></Heading>
           <Text
             dangerouslySetInnerHTML={{ __html: post && post.uploadedAt }}
-            color="blackAlpha.900"
           ></Text>
         </Box>
         <Box minH="50vh" p={2}>
@@ -40,7 +38,7 @@ const NewsDetail = () => {
           ></Text>
         </Box>
         <Link href="/">
-          <Text color="blackAlpha.900">トップページへ</Text>
+          <Text>トップページへ</Text>
         </Link>
       </Stack>
     </Box>
