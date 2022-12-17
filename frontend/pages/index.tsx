@@ -19,7 +19,7 @@ export default function Home() {
     <Box>
       <Header />
       <Stack p={4} spacing={4}>
-        <Heading as="h1" fontSize="3xl" color="blackAlpha.900">
+        <Heading as="h1" fontSize="3xl">
           トップページ
         </Heading>
         <Stack spacing={4}>
@@ -46,9 +46,7 @@ export default function Home() {
           </Grid>
           <Flex justify="center">
             <Link href="/news">
-              <Button size="sm" colorScheme="red">
-                もっとみる
-              </Button>
+              <Button size="sm">もっとみる</Button>
             </Link>
           </Flex>
         </Stack>
@@ -80,9 +78,7 @@ export default function Home() {
           </Grid>
           <Flex justify="center">
             <Link href="/member-only-contents">
-              <Button size="sm" colorScheme="red">
-                もっとみる
-              </Button>
+              <Button size="sm">もっとみる</Button>
             </Link>
           </Flex>
         </Stack>

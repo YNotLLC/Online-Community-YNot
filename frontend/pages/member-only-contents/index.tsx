@@ -1,4 +1,4 @@
-import { Box, Grid, Heading, Stack } from "@chakra-ui/react";
+import { Box, Grid, Heading, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { useEffect } from "react";
 import Article from "../../components/Article";
@@ -19,9 +19,7 @@ const MemberOnlyContent = () => {
     <Box>
       <Header />
       <Stack p={4} spacing={8}>
-        <Heading as="h1" color="blackAlpha.900">
-          コミュニティ限定コンテンツ
-        </Heading>
+        <Heading as="h1">コミュニティ限定コンテンツ</Heading>
         <Grid
           templateColumns={{
             base: "1fr",
@@ -44,7 +42,9 @@ const MemberOnlyContent = () => {
             );
           })}
         </Grid>
-        <Link href="/">トップページへ</Link>
+        <Link href="/">
+          <Text>トップページへ</Text>
+        </Link>
       </Stack>
     </Box>
   );

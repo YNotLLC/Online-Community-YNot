@@ -30,7 +30,6 @@ const MemberOnlyContentDetail = () => {
           ></Heading>
           <Text
             dangerouslySetInnerHTML={{ __html: post && post.uploadedAt }}
-            color="blackAlpha.900"
           ></Text>
         </Box>
         <Box minH="50vh" p={2}>
@@ -39,7 +38,9 @@ const MemberOnlyContentDetail = () => {
             color="blackAlpha.900"
           ></Text>
         </Box>
-        <Link href="/">トップページへ</Link>
+        <Link href="/">
+          <Text>トップページへ</Text>
+        </Link>
       </Stack>
     </Box>
   );
