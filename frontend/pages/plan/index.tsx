@@ -12,7 +12,7 @@ const Planding = () => {
           <Box bg='white' textAlign='center'>
             <Text p={5} fontSize="3xl" textColor='black' fontWeight='bold'>フリー</Text>
           </Box>
-          <Box bg='#F2F2F2' textAlign='center'>
+          <Box bg='#F2F2F2' textAlign='center' borderTop='1px' borderColor='#d3d3d3'>
             <Text p={10} fontSize='3xl' textColor='black' fontWeight='bold'>無料</Text>
             <Text p={10} textColor='black' fontWeight='bold'>コミュニティ限定コンテンツの閲覧</Text>
             <Button m={10}>申し込む</Button>
@@ -22,7 +22,7 @@ const Planding = () => {
           <Box bg='white' textAlign='center'>
             <Text p={5} fontSize="3xl" textColor='black' fontWeight='bold'>メンバー</Text>
           </Box>
-          <Box bg='#F2F2F2' textAlign='center'>
+          <Box bg='#F2F2F2' textAlign='center' borderTop='1px' borderColor='#d3d3d3'>
             <Text p={10} fontSize='3xl' textColor='black' fontWeight='bold'>1000円/月</Text>
             <Text p={10} textColor='black' fontWeight='bold'>
               コミュニティ限定コンテンツの閲覧<br />
