@@ -8,7 +8,7 @@ const Planding = () => {
       <Header />
       <Stack p={4} spacing={8}>
         <Heading as="h1">プラン</Heading>
-        <Box boxShadow='lg'>
+        <Box border='1px' borderColor='#d3d3d3'>
           <Box bg='white' textAlign='center'>
             <Text p={5} fontSize="3xl" textColor='black' fontWeight='bold'>フリー</Text>
           </Box>
@@ -18,7 +18,7 @@ const Planding = () => {
             <Button m={10}>申し込む</Button>
           </Box>
         </Box>
-        <Box boxShadow='lg'>
+        <Box border='1px' borderColor='#d3d3d3'>
           <Box bg='white' textAlign='center'>
             <Text p={5} fontSize="3xl" textColor='black' fontWeight='bold'>メンバー</Text>
           </Box>
