@@ -8,7 +8,7 @@ fi
 
 if [ $1 == "up" ]; then
   if [ ! -e ../node_modules ]; then
-    docker-compose run --rm web sh -c "npm install"
+    docker-compose run --rm frontend sh -c "npm install"
   fi
 
   docker-compose up -d
